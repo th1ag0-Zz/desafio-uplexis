@@ -1,6 +1,8 @@
 .service-box-content {
 	width: 100%;
+	max-width: 286px;
 	height: 16.5rem;
+	justify-self: center;
 
 	display: flex;
 	flex-direction: column;

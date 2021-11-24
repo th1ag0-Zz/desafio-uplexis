@@ -71,6 +71,12 @@ import Vue from 'vue';
 import Banner from '~/components/Banner';
 
 export default Vue.extend({
+	head() {
+		return {
+			title: 'Detalhes'
+		};
+	},
+
 	components: { Banner }
 });
 </script>

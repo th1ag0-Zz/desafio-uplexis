@@ -1,7 +1,9 @@
 <template>
 	<div class="container">
 		<header>
-			<Banner />
+			<div class="slider-banner">
+				<Banner />
+			</div>
 
 			<div class="categories-content">
 				<button
@@ -35,19 +37,17 @@
 		<main>
 			<div class="order-content">
 				<p>ORDENAR</p>
-				<select name="" id="">
-					<option value="1">Lançamento</option>
-					<option value="2">Preço</option>
+				<select v-model="orderBy">
+					<option value="Lançamento">Lançamento</option>
+					<option value="Preço">Preço</option>
 				</select>
 			</div>
 
 			<div class="services-content">
 				<ServiceBox
-					v-for="service in services"
+					v-for="service in servicesFiltered"
 					:key="service.id"
-					:name="service.name"
-					:description="service.description"
-					:iconName="service.iconName"
+					:service="service"
 				/>
 			</div>
 		</main>
@@ -78,13 +78,44 @@ export default Vue.extend({
 		return {
 			categories,
 			services,
+			orderBy: 'Lançamento',
+			servicesFiltered: services,
 			categorySelectedId: 0
 		};
+	},
+
+	watch: {
+		orderBy(newValue) {
+			console.log(newValue);
+
+			function compararPrecos(a, b) {
+				return a.price - b.price;
+			}
+
+			// os IDs estão na ordem de crição
+			function comparaIds(a, b) {
+				return a.id - b.id;
+			}
+
+			if (newValue === 'Preço') {
+				this.servicesFiltered = this.servicesFiltered.sort(compararPrecos);
+			} else {
+				this.servicesFiltered = this.servicesFiltered.sort(comparaIds);
+			}
+		}
 	},
 
 	methods: {
 		changeCategory(categoryId) {
 			this.categorySelectedId = categoryId;
+
+			if (categoryId === 0) {
+				this.servicesFiltered = this.services;
+			} else {
+				this.servicesFiltered = this.services.filter(
+					item => item.categoryId === categoryId
+				);
+			}
 		}
 	}
 });

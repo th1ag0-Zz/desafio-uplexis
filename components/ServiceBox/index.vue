@@ -1,16 +1,16 @@
 <template>
 	<div class="service-box-content">
 		<div class="service-info">
-			<img :src="'assets/' + iconName + '.png'" :alt="name" />
+			<img :src="'assets/' + service.iconName + '.png'" :alt="service.name" />
 
-			<p class="service-name">{{ name }}</p>
+			<p class="service-name">{{ service.name }}</p>
 
-			<p class="service-description">{{ description }}</p>
+			<p class="service-description">{{ service.description }}</p>
 		</div>
 
 		<div class="service-footer-info">
 			<button @click="goToDetailsPage">
-				<p>R$ 29,99</p>
+				<p>R$ {{ service.price }},00</p>
 
 				<p>Saiba mais</p>
 			</button>
@@ -23,9 +23,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
 	props: {
-		name: { type: String, required: true },
-		description: { type: String, required: true },
-		iconName: { type: String, required: true }
+		service: { type: Object, required: true }
 	},
 
 	methods: {
