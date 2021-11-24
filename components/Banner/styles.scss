@@ -1,0 +1,70 @@
+.banner-header {
+	width: 100%;
+	min-height: 14rem;
+	background-color: #014c73;
+	background-image: linear-gradient(to right, #014c73, #010312);
+
+	border-bottom: 4px solid var(--orange);
+	padding: 1.8rem 2.6rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	color: #fff;
+}
+
+.title-content {
+	display: flex;
+	align-items: center;
+
+	.title {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	span {
+		font-size: 2rem;
+		font-weight: 300;
+		margin: 0 1rem;
+	}
+
+	.description {
+		font-size: 1.5rem;
+		font-weight: 300;
+	}
+}
+
+.description-banner {
+	max-width: 548px;
+	text-align: justify;
+	font-weight: 300;
+	font-size: 1rem;
+
+	margin: 1rem 0;
+}
+
+.about-content {
+	display: flex;
+	align-items: center;
+
+	.price-content {
+		font-size: 2rem;
+		margin-right: 1.2rem;
+
+		span {
+			font-size: 0.8rem;
+			font-weight: 300;
+		}
+	}
+
+	button {
+		padding: 0.4rem 0.8rem;
+		border: 0;
+		cursor: pointer;
+		color: var(--white);
+		background-color: #ff8739;
+		font-weight: bold;
+		border-radius: 4px;
+	}
+}

@@ -1,0 +1,29 @@
+:root {
+	--white: #ffffff;
+	--orange: #ff8739;
+	--gray: #636363;
+	--gray-light: #f9f9f9;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	scroll-behavior: smooth;
+}
+
+@media (max-width: 1200px) {
+	html {
+		font-size: 93.75%;
+	}
+}
+
+@media (max-width: 480px) {
+	html {
+		font-size: 87.5%;
+	}
+}
