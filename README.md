@@ -9,7 +9,7 @@
 </h1>
 <h2 align="center">
 	Acesse a demo:
-	<a href="https://movueit.vercel.app/">
+	<a href="http://desafio-uplexis-seven.vercel.app/">
 		upMiner
 	</a>
 </h2>
